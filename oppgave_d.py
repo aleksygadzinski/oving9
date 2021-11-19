@@ -1,3 +1,4 @@
+from obi import Spiller
 def read(file_name):
     from OPPGAVE_C import Question
     quest=list()
@@ -12,9 +13,26 @@ def read(file_name):
     return quest  
     #for a in quest:
         #print (a)
+  
+    
+    
+s_l= list()
+n_p = int(input("write the number of players: "))
+for player in range(n_p):
+    print("\n\nPlayer",player, "name")
+    p_n = input(": ")
+    s_l.append(Spiller(p_n,0))
+
 
 Questions = read("sporsmaalsfil.txt")
+
 for Question in Questions:
     Question.asking()
-    Question.asking_for_answer()
-    Question.korrekt_svar_tekst()
+    Question.asking_for_answer(s_l)
+    for player in s_l:
+        print(player.navn," ",player.get_points())
+        
+    
+
+
+    

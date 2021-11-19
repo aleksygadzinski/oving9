@@ -14,33 +14,17 @@ class Question:
             
             
 
-    def asking_for_answer(self):
-        self.player1 = int(input("Player 1 answer: "))
-        self.player2 = int(input("\nPlayer 2 answer: "))
-
-        
-
-    def korrekt_svar_tekst(self):
-        p1=0
-        p2=0
-        final_answer = self.answers.title().split(",")
-        print("\n\nCorrect answer: ",final_answer[int(self.correct_answer.title())],"\n\n")        
-        if self.player1 ==  int(self.correct_answer.title()) :
-            p1 = int(p1)+1
-            print("Player 1: Correct")
-        else: 
-            print("Player 1: Wrong")
-        if self.player2 ==  int(self.correct_answer.title()) :
-            p2 = int(p1)+1
-            print("Player 2: Correct")
-        else:
-            print("Player 2: Wrong")
+    def asking_for_answer(self, s_l):
+        for player in s_l: 
             
-        print("\nScore:","\nPlayer 1:",p1,"\nPlayer 2:",p2,"\n\n")
-        
-
-            #int(self.correct_answer.title()) 
-
+            print(player.navn,"answer")
+            svar = int(input(": "))
+            
+            if svar ==  int(self.correct_answer.title()) :
                 
+                #print(item,": Correct")
+               
+                player.add_points()
                 
-
+           #else: 
+                #print(item,": Wrong! What a noob")
